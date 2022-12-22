@@ -1,4 +1,4 @@
-// Read in samples.json URL with D3
+// Create Demographic info section from metadata
 function buildMetadata(sample) {
   d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then((data) => {
     let metadata = data.metadata;
@@ -12,6 +12,7 @@ function buildMetadata(sample) {
   });
 }
 
+// Function to build bubble chart and bar chart
 function buildCharts(sample){
   d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then((data) => {
     let samples = data.samples;
@@ -59,6 +60,7 @@ function buildCharts(sample){
     Plotly.newPlot("bar", bar, barLayout);
   });
 }
+// Initialize function to display the first sample data when loading the page
   function init(){
     let selector = d3.select("#selDataset");
     d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json").then((data) => {
